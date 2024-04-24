@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 7071;
 
 var corsOptions = {
-    origin: 'https://class-mate-lfunu0xhq-classmate340.vercel.app',
+    origin: 'https://class-mate-seven.vercel.app',
     credentials: true,
     optionsSuccessStatus: 200
 };
