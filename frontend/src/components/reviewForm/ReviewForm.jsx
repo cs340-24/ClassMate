@@ -12,7 +12,7 @@ export const ReviewForm = ( { uni, setAlert, classID} ) => {
   useEffect(() => { //gets list of professors
     const fetchData = async () => {
       try {
-        const result = await axios.get(`http://localhost:7071/uni/${uni}/allprofessors`);
+        const result = await axios.get(`http://classmateas.azurewebsites.net/uni/${uni}/allprofessors`);
         setProfessors(result.data);
         setProfessorID(result.data[0].ProfessorID); //initializes ID
       } catch (error) {
@@ -68,7 +68,7 @@ export const ReviewForm = ( { uni, setAlert, classID} ) => {
     console.log("classID: " + classID);
     console.log("termTaken: " + data.termTaken);
 
-    axios.post("http://localhost:7071/addcomment", data) //post request for review
+    axios.post("http://classmateas.azurewebsites.net/addcomment", data) //post request for review
       .then(response => {
         console.log("Post request successful", response.data);
         FetchReviews(uni, classID);

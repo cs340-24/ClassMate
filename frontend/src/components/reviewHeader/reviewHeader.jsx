@@ -11,7 +11,7 @@ export default function ReviewHeader( {uniID, classID}) {
 
 
 function fetchData() {
-    axios.get(`http://localhost:7071/uni/${uniID}/class/${classID}/ratings`)
+    axios.get(`http://classmateas.azurewebsites.net/uni/${uniID}/class/${classID}/ratings`)
     .then(response => {
         const ratings = response.data;
         const mappedQualities = ratings.map(rating => rating.QualityValue);

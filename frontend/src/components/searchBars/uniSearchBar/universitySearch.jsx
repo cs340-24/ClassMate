@@ -7,7 +7,7 @@ export const SearchBar = ({ setResults }) => {
 
     
     const fetchData = async (value) => {
-            const response = await fetch("http://localhost:7071/universities");
+            const response = await fetch("http://classmateas.azurewebsites.net/universities");
             const json = await response.json();
             const result = json.filter((uni) => {
                 return uni && value &&

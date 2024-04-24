@@ -8,19 +8,18 @@ import {connect, closeConnection, reopenConnection, testQuery} from './sqlconnec
 import {getUniversities, getClassInfo, getClassesByUniAndType, getAllClassesByUni, getProfessorsByClassID, getProfessorsAtUni, getPostersByClassID, getUserID, getClassRatings} from './sqlquery.js'
 import { addUniversity, addClassType, addComment, addClass, addDifficulty, addProfessor, addUser } from './sqladd.js';
 import { deleteUniversity, deleteClassType, deleteComment, deleteClass, deleteDifficulty, deleteProfessor, deleteUser } from './sqldelete.js';
-const cors = require('cors');
 const app = express();
 
 const port = process.env.PORT || 7071;
 
 var corsOptions = {
-    origin: 'https://class-mate-lfunu0xhq-classmate340.vercel.app/',
+    origin: 'https://class-mate-lfunu0xhq-classmate340.vercel.app',
     credentials: true,
     optionsSuccessStatus: 200
 };
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 const local_connect = process.argv[2] === '-l' ? true : false;
 
