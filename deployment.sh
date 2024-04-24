@@ -8,4 +8,4 @@ npm install
 
 # Build the project
 echo "Building the project..."
-bash server.js
+NODE_ENV=development node server.js
