@@ -1,6 +1,5 @@
 import sql from 'mssql';
-import dotenv from 'dotenv';
-dotenv.config({ path: `.env.${process.env.NODE_ENV}`, debug: true });
+
 
 const config_local = {
     user: process.env.AZURE_SQL_USER, // better stored in an app setting such as process.env.DB_USER
@@ -33,7 +32,7 @@ const config_server = {
 // close connection only when we're certain application is finished
 
 //Connect to the database -> returns a pool connection
-export async function connect(local = true) {
+export async function connect(local = false) {
     try {
         if(local) {
             console.log("Connecting to database locally.");
