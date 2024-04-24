@@ -1,20 +1,6 @@
 import sql from 'mssql';
 
 
-const config_local = {
-    user: process.env.AZURE_SQL_USER, // better stored in an app setting such as process.env.DB_USER
-    password: process.env.AZURE_SQL_PASSWORD, // better stored in an app setting such as process.env.DB_PASSWORD
-    server: process.env.AZURE_SQL_SERVER, // better stored in an app setting such as process.env.DB_SERVER
-    port: 1433, // optional, defaults to 1433, better stored in an app setting such as process.env.DB_PORT
-    database: process.env.AZURE_SQL_DATABASE, // better stored in an app setting such as process.env.DB_NAME
-    authentication: {
-        type: 'default'
-    },
-    options: {
-        encrypt: true
-    }
-}
-
 const config_server = {
     user: process.env.AZURE_SQL_USER, // better stored in an app setting such as process.env.DB_USER
     password: process.env.AZURE_SQL_PASSWORD, // better stored in an app setting such as process.env.DB_PASSWORD
