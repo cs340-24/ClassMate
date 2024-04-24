@@ -25,13 +25,12 @@ jobs:
         run: |
           cd backend
           npm install
-          node server.js --if-present          
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: backend
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,5 +51,5 @@ jobs:
         with:
           app-name: 'ClassMateAS'
           slot-name: 'Production'
-          package: .
+          package: backend/node-app
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_13D0B62F675A42E2AB56E9125020DB6B }}
