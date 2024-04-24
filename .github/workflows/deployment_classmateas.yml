@@ -23,6 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd backend
           npm install
           node server.js --if-present          
       
