@@ -53,4 +53,4 @@ jobs:
           app-name: 'ClassMateAS'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B05B3F1B4E64115B2BE7DE91A7DA1D8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_13D0B62F675A42E2AB56E9125020DB6B }}
