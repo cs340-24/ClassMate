@@ -2,7 +2,7 @@ import sql from 'mssql';
 
 
 const config_server = {
-    user: process.env.AZURE_SQL_USER, // better stored in an app setting such as process.env.DB_USER
+    user: "adminMC", // better stored in an app setting such as process.env.DB_USER
     password: process.env.AZURE_SQL_PASSWORD, // better stored in an app setting such as process.env.DB_PASSWORD
     server: "mysqlservermc.database.windows.net", // better stored in an app setting such as process.env.DB_SERVER
     port: 1433, // optional, defaults to 1433, better stored in an app setting such as process.env.DB_PORT
