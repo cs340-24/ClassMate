@@ -1,6 +1,6 @@
 import sql from 'mssql';
 
-const dbUser = process.env.Azure_SQL_USER;
+const dbUser = process.env.AZURE_SQL_USER;
 if (!dbUser) {
     console.log('DB_USER environment variable is not set.');
 } else {
