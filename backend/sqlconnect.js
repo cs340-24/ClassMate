@@ -1,8 +1,14 @@
 import sql from 'mssql';
 
+dbUser = process.env.Azure_SQL_USER;
+if (!dbUser) {
+    console.log('DB_USER environment variable is not set.');
+} else {
+    console.log(`DB_USER is set to ${dbUser}`);
+}
 
 const config_server = {
-    user: "adminMC", // better stored in an app setting such as process.env.DB_USER
+    user: process.env.AZURE_SQL_USER, // better stored in an app setting such as process.env.DB_USER
     password: process.env.AZURE_SQL_PASSWORD, // better stored in an app setting such as process.env.DB_PASSWORD
     server: "mysqlservermc.database.windows.net", // better stored in an app setting such as process.env.DB_SERVER
     port: 1433, // optional, defaults to 1433, better stored in an app setting such as process.env.DB_PORT
