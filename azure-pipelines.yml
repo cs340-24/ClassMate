@@ -1,0 +1,34 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    # Navigate to the backend directory and install dependencies
+    cd backend
+    npm install
+    # Navigate to the frontend directory and install dependencies
+    cd ../frontend
+    npm install
+  displayName: 'Install dependencies'
+
+- script: |
+    # Navigate to the frontend directory and build the frontend
+    cd frontend
+    npm run dev
+  displayName: 'run frontend'
+
+
+- script: |
+    # Start the backend
+    cd backend
+    bash run.sh
+  displayName: 'Start backend'
+
