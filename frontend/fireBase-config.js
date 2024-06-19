@@ -1,14 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
+import dotenv from 'dotenv';
+console.log("hello world");
+dotenv.config();
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAvQ_4NfL7OQT4oJjMXU9-wZHVF4YTvm7w",
-  authDomain: "classmate-4c2d5.firebaseapp.com",
-  projectId: "classmate-4c2d5",
-  storageBucket: "classmate-4c2d5.appspot.com",
-  messagingSenderId: "623475161245",
-  appId: "1:623475161245:web:507a9fdf79173520a8fc74",
-  measurementId: "G-YJJ54T9PEG"
+  apiKey: import.meta.env.firebase_apikey,
+  authDomain: import.meta.env.firebase_authDomain,
+  projectId: import.meta.env.projectId,
+  storageBucket: import.meta.env.firebase_storageBucket,
+  messagingSenderId: import.meta.env.firebase_messagingSensorId,
+  appId: import.meta.env.firebase_appId,
+  measurementId: import.meta.env.firebase_measurementId
 };
 
 // Initialize Firebase
