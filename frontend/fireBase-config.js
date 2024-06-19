@@ -1,18 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
-import dotenv from 'dotenv';
 console.log("hello world");
-dotenv.config();
 
 
 const firebaseConfig = {
-  apiKey: import.meta.env.firebase_apikey,
-  authDomain: import.meta.env.firebase_authDomain,
-  projectId: import.meta.env.projectId,
-  storageBucket: import.meta.env.firebase_storageBucket,
-  messagingSenderId: import.meta.env.firebase_messagingSensorId,
-  appId: import.meta.env.firebase_appId,
-  measurementId: import.meta.env.firebase_measurementId
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
