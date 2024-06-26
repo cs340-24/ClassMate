@@ -12,7 +12,7 @@ export const ReviewForm = ( { uni, setAlert, classID, setShowGraph} ) => {
   useEffect(() => { //gets list of professors
     const fetchData = async () => {
       try {
-        const result = await axios.get(`http://localhost:7071/uni/${uni}/allprofessors`);
+        const result = await axios.get(`https://classmate-backend-h16a.onrender.com/uni/${uni}/allprofessors`);
         const sortedProfessors = result.data.sort((a, b) => {
           // Compare professors' names alphabetically
           return a.Name.localeCompare(b.Name);
@@ -71,7 +71,7 @@ export const ReviewForm = ( { uni, setAlert, classID, setShowGraph} ) => {
     console.log("classID: " + classID);
     console.log("termTaken: " + data.termTaken);
 
-    axios.post("http://localhost:7071/addcomment", data) //post request for review
+    axios.post("https://classmate-backend-h16a.onrender.com/addcomment", data) //post request for review
       .then(response => {
         console.log("Post request successful", response.data);
         FetchReviews(uni, classID);

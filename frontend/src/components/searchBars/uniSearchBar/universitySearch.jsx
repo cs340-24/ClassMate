@@ -7,7 +7,7 @@ export const SearchBar = ({ setResults }) => {
 
     
     const fetchData = async (value) => {
-            const response = await fetch("http://localhost:7071/universities");
+            const response = await fetch("https://classmate-backend-h16a.onrender.com/universities");
             const json = await response.json();
             const result = json.filter((uni) => {
                 return uni && value &&

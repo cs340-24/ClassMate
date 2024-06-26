@@ -9,7 +9,7 @@ export default function ReviewHeader( {uniID, classID, className}) {
 
 
 function fetchData() {
-    axios.get(`http://localhost:7071/uni/${uniID}/class/${classID}/ratings`)
+    axios.get(`https://classmate-backend-h16a.onrender.com/uni/${uniID}/class/${classID}/ratings`)
     .then(response => {
         const ratings = response.data;
         const mappedQualities = ratings.map(rating => rating.QualityValue);

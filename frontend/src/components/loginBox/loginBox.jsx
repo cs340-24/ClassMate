@@ -25,7 +25,7 @@ export default function LoginBox() {
 
   const fetchUserID = async (email) => {
     try {
-      const response = await axios.get(`http://localhost:7071/email/${email}/userID`);
+      const response = await axios.get(`https://classmate-backend-h16a.onrender.com/email/${email}/userID`);
       console.log(response.data[0].UserID);
       // setUserID(response.data[0].UserID); // Assuming response contains the user ID
       localStorage.setItem("userID", response.data[0].UserID);

@@ -9,7 +9,7 @@ export const ClassSearchBar = ({ setResults, uniID }) => {
 
     
     const fetchData = async (value) => {
-            const response = await fetch(`http://localhost:7071/uni/${uniID}/allclasses`);
+            const response = await fetch(`https://classmate-backend-h16a.onrender.com/uni/${uniID}/allclasses`);
             const json = await response.json();
             const result = json.filter((course) => {
                 return course && value &&

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const FetchReviews = async (uni, classID) => {
   try {
     if (uni && classID) { 
-      const response = await axios.get(`http://localhost:7071/uni/${uni}/class/${classID}`);
+      const response = await axios.get(`https://classmate-backend-h16a.onrender.com/uni/${uni}/class/${classID}`);
       console.log("fetching reviews");
       return response.data; // Return the fetched reviews
     }
